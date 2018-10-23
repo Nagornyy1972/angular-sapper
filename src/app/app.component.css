@@ -1,0 +1,74 @@
+.mineRow {
+  height: 22px;
+}
+
+.cell {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  background-color: #bfbfbf;
+  border: 1px;
+  vertical-align: top;
+}
+
+img {
+  width: 22px;
+  height: 22px;
+  vertical-align: top;
+}
+
+button {
+  background-color: #eeeeee;
+  color: darkslateblue;
+}
+
+.closed {
+  width: 22px;
+  height: 22px;
+  padding: 0px;
+  border: 1px solid #bfbfbf;
+  vertical-align: top;
+}
+
+.opened {
+  width: 22px;
+  height: 22px;
+  padding: 0px;
+  border: 0px solid #bfbfbf;
+  vertical-align: top;
+  background-color: #bfbfbf;
+  font-weight: 700;
+}
+
+.marked {
+  width: 22px;
+  height: 22px;
+  padding: 0px;
+  border: 0px solid #eeeeee;
+  vertical-align: top;
+  background-color: #eeeeee !important;
+  font-weight: 700;
+}
+
+nav {
+  background-color: #bfbfbf;
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-size: large;
+  font-weight: 700;
+}
+
+b {
+  color: darkslateblue;
+  font-size: large;
+}
+
+input {
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+}

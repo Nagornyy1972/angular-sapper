@@ -1,0 +1,93 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-inverse">
+        <div class="form-group">
+          <b>SAPPER</b>
+        </div>
+        <mat-form-field>
+          <input type="number" placeholder="ROWS"
+                 matInput
+                 class="form-control"
+                 [(ngModel)]="rows" (change)="paramsChanged()">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="number" placeholder="COLUMNS"
+                 matInput
+                 class="form-control"
+                 [(ngModel)]="columns" (change)="paramsChanged()">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="number" placeholder="Mines"
+                 matInput
+                 class="form-control"
+                 [(ngModel)]="maxMines" (change)="paramsChanged()">
+        </mat-form-field>
+        <div class="form-group">
+
+        </div>
+        <div class="form-group">
+          time:
+          <b>{{timer}}</b>
+          mines:
+          <b>{{markedMines}}</b>
+        </div>
+        <button class="btn btn-default" (click)="newGame()">NEW</button>
+        <!--<div class="form-group">-->
+          <mat-form-field>
+            <input type="text" placeholder="Player"
+                   spellcheck="false"
+                   aria-label="Text" matInput
+                   class="form-control"
+                   [(ngModel)]="player">
+          </mat-form-field>
+        <!--</div>-->
+        <button [disabled]="!canSave"  class="btn btn-default" (click)="saveResults(table)">SAVE</button>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor="let row of cells; let i = index" class="mineRow">
+        <div *ngFor="let cell of row; let j = index" class="cell">
+          <button class="closed" *ngIf="cells[i][j].closed === false && cells[i][j].mine !== 0">
+            <img  class="closed" src="../assets/img/mine.png" alt="">
+          </button>
+          <div class="closed" *ngIf="cells[i][j].closed === false && cells[i][j].mine === 0">
+            <button class="opened"
+                    [ngStyle]="{'color':cells[i][j].color}"
+                    (click)="openCells(i, j)">
+              {{cells[i][j].sum}}
+            </button>
+          </div>
+          <div *ngIf="cells[i][j].closed === true">
+            <button class="closed"
+                    (click)="openMine(i, j)"
+                    (contextmenu)="markMine(i,j)">
+              <img  *ngIf="cells[i][j].marked" class="marked" src="../assets/img/marked.jpg" alt="">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <table #table mat-table [dataSource]="getChampionsTable.dataSource | includeStr: '' + columns + 'x' + rows + 'x' + maxMines" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> Score </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Champions </th>
+          <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
