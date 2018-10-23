@@ -1,5 +1,13 @@
 # Sapper
 
+## To run project on your computer
+
+Make a clone, or download zip archive, and run
+
+#npm i
+
+in directory of project
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
 ## Development server
