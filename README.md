@@ -6,7 +6,7 @@ You can see the working project by [reference] (https://supper-6fade.firebaseapp
 
 Make a clone, or download zip archive, and run
 
-'npm i'
+`npm i`
 
 in directory of project.
 
