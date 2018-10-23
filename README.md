@@ -4,7 +4,7 @@
 
 Make a clone, or download zip archive, and run
 
-#npm i
+# npm i
 
 in directory of project
 
