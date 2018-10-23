@@ -1,6 +1,6 @@
 # Sapper
 
-You can see the working project by [reference] (https://supper-6fade.firebaseapp.com/)
+You can see the working project by [reference](https://supper-6fade.firebaseapp.com/)
 
 # To run project on your computer
 
